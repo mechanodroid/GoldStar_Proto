@@ -1,0 +1,52 @@
+
+
+/* ========== engine.css ========== */
+
+.blog_engine .content {
+  padding: 5px;
+}
+
+.blog_engine .left-col {
+  width: 75%;
+  float:left;
+}
+
+
+.blog_engine .right-col {
+  width:25%;
+  float:right;
+  padding-bottom: 30px;
+}
+
+
+/* ========== header.css ========== */
+
+@font-face {
+  font-family: rubberneck;
+  src: url('/fonts/RUBBERNECK.ttf');
+}
+@font-face {
+  font-family: bukabird;
+  src: url('/fonts/Buka Bird.ttf');
+}
+
+.blog_header h1 {
+  margin: 0px;
+  padding: 5px;
+  font-family: bukabird, "Arial Black", sans-serif;
+  background-color: #aade32;
+  border-bottom: ridge 5px #329300;
+  font-size:80px;
+  text-shadow: 2px 2px 3px #000000;
+}
+.blog_header h1 img {
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.blog_header a {
+  color: #6a340a;
+  text-decoration: none ! important;
+}
+
+/* ========== signin.css ========== */
+

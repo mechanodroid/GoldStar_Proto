@@ -1,0 +1,39 @@
+<template client_enabled="true" name="signedIn">
+  <div id="signedin" class="welcome">
+    Welcome [[if request]] <!-- for the server-side -->
+              $[request.session.user.username].
+            [[else]] <!-- the else case handles the client side -->
+              [[if feather.auth && feather.auth.user]]
+                $[feather.auth.user.username].
+              [[/if]]
+            [[/if]]  
+    <input type="button" id="signoutBtn" value="Sign Out" />
+  </div>
+</template>
+<template client_enabled="true" name="signedOut">
+  <div id="signinform" class="signinform">
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username" size="10" /><br/>
+    <input type="checkbox" name="nameAddIfUnique" value="addIfNot">Add User If Not Found<br>
+    <hr>
+    <label for="password">Achievment</label>
+    <input id="password" type="text" name="password" size="10" /><br/>
+    <input type="checkbox" name="acievementAddIfUnique" value="addIfNot">Add Achievement If Not Found<br>
+
+    <input type="button" id="signinBtn" value="Add Achievement To User" />    
+    <p>
+    <hr>
+    User Report<input id="querryTxt" type="text" name="query" size="12" />
+    <input type="button" id="querryBtn" value="Find User" />
+    <p id="message"></p>
+  </div>
+</template>
+<div id="signInPanel">
+  <dynamic>
+    [[if request.session && request.session.user]]
+      <insert_template name="signedIn"/>
+    [[else]]
+      <insert_template name="signedOut"/>
+    [[/if]]
+  </dynamic>
+</div>
